@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles.scss";
 import axios from "axios";
 
-export default function RangeRings() {
+export default function RangeRings(props) {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
@@ -17,13 +17,14 @@ export default function RangeRings() {
     <div className="rangerings">
       {locations.map((location) => {
         return (
-          <Link
-            to={`/ring/${location.name}`}
-            state={location}
+          <button
+            onClick={() => {
+              props.onClick("ring", location);
+            }}
             className="rangerings__link"
           >
             {location.name}
-          </Link>
+          </button>
         );
       })}
     </div>

@@ -1,22 +1,38 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./app.scss";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
-import Ring from "./components/Ring";
 import RangeRings from "./components/RangeRings";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Ring from "./components/Ring";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState();
+
+  const loadPage = useCallback((page, payload) => {
+    switch (page) {
+      case "home":
+        setCurrentPage(<Home />);
+        break;
+      case "rings":
+        setCurrentPage(<RangeRings onClick={loadPage} />);
+        break;
+      case "ring":
+        setCurrentPage(<Ring locationData={payload} />);
+        break;
+      default:
+        setCurrentPage("home");
+        break;
+    }
+  }, []);
+
+  useEffect(() => {
+    loadPage("home");
+  }, [loadPage]);
+
   return (
     <div className="App">
-      <div className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="rangerings" element={<RangeRings />} />
-          <Route path="ring/:name" element={<Ring />} />
-        </Routes>
-      </div>
-      <Nav />
+      <div className="content">{currentPage}</div>
+      <Nav onClick={loadPage} />
     </div>
   );
 }

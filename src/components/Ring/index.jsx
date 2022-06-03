@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import ImagePanner from "../ImagePanner";
 import "./styles.scss";
 
 export default function Ring() {
@@ -40,11 +41,9 @@ export default function Ring() {
 
   return (
     <div className="ring">
-      <TransformWrapper initialScale={1}>
-        <TransformComponent wrapperClass="ring__wrapper">
-          <img src={process.env.PUBLIC_URL + ringImage} alt="zdfg" />
-        </TransformComponent>
-      </TransformWrapper>
+      <ImagePanner>
+        <img src={process.env.PUBLIC_URL + ringImage} alt="zdfg" />
+      </ImagePanner>
       <div className="ring__nav">{getButtons()}</div>
       <div className="ring__label">{ringData.name}</div>
     </div>

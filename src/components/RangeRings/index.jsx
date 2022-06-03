@@ -17,7 +17,11 @@ export default function RangeRings() {
     <div className="rangerings">
       {locations.map((location) => {
         return (
-          <Link to={`/ring/${location.name}`} state={location}>
+          <Link
+            to={`/ring/${location.name}`}
+            state={location}
+            className="rangerings__link"
+          >
             {location.name}
           </Link>
         );

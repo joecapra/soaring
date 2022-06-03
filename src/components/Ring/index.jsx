@@ -27,6 +27,7 @@ export default function Ring() {
     return btns.map((ratio) => {
       return (
         <button
+          className="ring__navbtn"
           onClick={() => {
             getImage(ratio);
           }}
@@ -39,13 +40,13 @@ export default function Ring() {
 
   return (
     <div className="ring">
-      LOCATION={ringData.name}
-      {getButtons()}
       <TransformWrapper initialScale={1}>
         <TransformComponent wrapperClass="ring__wrapper">
           <img src={process.env.PUBLIC_URL + ringImage} alt="zdfg" />
         </TransformComponent>
       </TransformWrapper>
+      <div className="ring__nav">{getButtons()}</div>
+      <div className="ring__label">{ringData.name}</div>
     </div>
   );
 }

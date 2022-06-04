@@ -7,7 +7,7 @@ export default function RangeRings(props) {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    const dataUrl = process.env.PUBLIC_URL + "static/jsondata/rings.json";
+    const dataUrl = process.env.PUBLIC_URL + "/static/jsondata/rings.json";
     axios.get(dataUrl).then((res) => {
       setLocations(res.data);
     });

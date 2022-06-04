@@ -40,7 +40,7 @@ export default function Ring(props) {
     <div className="ring">
       <ImagePanner>
         <img
-          src={process.env.PUBLIC_URL + "static/images/rings/" + ringImage}
+          src={process.env.PUBLIC_URL + "/static/images/rings/" + ringImage}
           alt="zdfg"
         />
       </ImagePanner>

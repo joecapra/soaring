@@ -39,7 +39,10 @@ export default function Ring(props) {
   return (
     <div className="ring">
       <ImagePanner>
-        <img src={process.env.PUBLIC_URL + ringImage} alt="zdfg" />
+        <img
+          src={process.env.PUBLIC_URL + "static/images/rings/" + ringImage}
+          alt="zdfg"
+        />
       </ImagePanner>
       <div className="ring__nav">{getButtons()}</div>
       <div className="ring__label">{locationData.name}</div>

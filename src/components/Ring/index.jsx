@@ -45,7 +45,7 @@ export default function Ring(props) {
         />
       </ImagePanner>
       <div className="ring__nav">{getButtons()}</div>
-      <div className="ring__label">{locationData.name}</div>
+      <div className="ring__label">{locationData.name} | 2000' Safety</div>
     </div>
   );
 }

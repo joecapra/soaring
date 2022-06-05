@@ -1,0 +1,11 @@
+// Colors
+$nav-height: 90px;
+$color-content-bg: #444444;
+
+
+@mixin content-section {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+

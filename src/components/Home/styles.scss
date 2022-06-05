@@ -1,6 +1,5 @@
+@import '../../styles/main.scss';
+
 .home {
-    width: 100%;
-    height: 100%;
-    padding-bottom: 65px;
-    background-color: orange;
+    @include content-section;
 }

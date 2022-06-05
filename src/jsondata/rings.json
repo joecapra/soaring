@@ -7,150 +7,73 @@
     }
   },
   {
-    "name": "Cindercone",
+    "name": "Inyo - Lonepine",
     "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
+      "30": "Inyo-Lonepine_30-1.jpg",
+      "25": "Inyo-Lonepine_25-1.jpg"
+    }
+  },
+  {
+    "name": "Backus",
+    "images": {
+      "30": "Backus_30-1.jpg",
+      "25": "Backus_25-1.jpg"
+    }
+  },
+  {
+    "name": "Bishop",
+    "images": {
+      "30": "Bishop_30-1.jpg",
+      "25": "Bishop_25-1.jpg"
+    }
+  },
+  {
+    "name": "CalCity",
+    "images": {
+      "30": "CalCity_30-1.jpg",
+      "25": "CalCity_25-1.jpg"
     }
   },
   {
     "name": "Cindercone",
     "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
+      "30": "Cindercone_30-1.jpg",
+      "25": "Cindercone_25-1.jpg"
     }
   },
   {
-    "name": "Cindercone",
+    "name": "Crystal",
     "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
+      "30": "Crystal_30-1.jpg",
+      "25": "Crystal_25-1.jpg"
     }
   },
   {
-    "name": "Cindercone",
+    "name": "Independence",
     "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
+      "30": "Independence_30-1.jpg",
+      "25": "Independence_25-1.jpg"
     }
   },
   {
-    "name": "Cindercone",
+    "name": "Inyokern",
     "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
+      "30": "Inyokern_30-1.jpg",
+      "25": "Inyokern_25-1.jpg"
     }
   },
   {
-    "name": "Cindercone",
+    "name": "Lonepine",
     "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
+      "30": "Lonepine_30-1.jpg",
+      "25": "Lonepine_25-1.jpg"
     }
   },
   {
-    "name": "Cindercone",
+    "name": "Olancha",
     "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
-    }
-  },
-  {
-    "name": "OKM",
-    "images": {
-      "30": "Crystal-Bishop-30-1.jpg",
-      "25": "Crystal-Bishop-25-1.jpg"
+      "30": "Olancha_30-1.jpg",
+      "25": "Olancha_25-1.jpg"
     }
   }
 ]

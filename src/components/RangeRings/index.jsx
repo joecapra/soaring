@@ -18,6 +18,7 @@ export default function RangeRings(props) {
       {locations.map((location) => {
         return (
           <button
+            key={location.name}
             onClick={() => {
               props.onClick("ring", location);
             }}

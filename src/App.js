@@ -4,6 +4,8 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import RangeRings from "./components/RangeRings";
 import Ring from "./components/Ring";
+import Checklists from "./components/Checklists";
+import List from "./components/List";
 
 function App() {
   const [currentPage, setCurrentPage] = useState();
@@ -18,6 +20,12 @@ function App() {
         break;
       case "ring":
         setCurrentPage(<Ring locationData={payload} />);
+        break;
+      case "checklists":
+        setCurrentPage(<Checklists onClick={loadPage} />);
+        break;
+      case "list":
+        setCurrentPage(<List listData={payload} />);
         break;
       default:
         setCurrentPage("home");

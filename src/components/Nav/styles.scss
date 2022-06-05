@@ -1,7 +1,30 @@
+@import '../../styles/main.scss';
+
 .nav {
     position: fixed;
     bottom: 0;
-    height: 50px;
+    height: 90px;
     width: 100%;
-    background-color: aqua;
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    justify-content: center;
+
+    &__divider {
+        width: 5px;
+        background-color: gray;
+    }
+    &__btn {
+        cursor: pointer;
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-icon{
+            width: 40px;
+            aspect-ratio: 1;
+            fill: white;
+        }
+    }
 }

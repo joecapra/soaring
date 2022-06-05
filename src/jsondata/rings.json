@@ -1,79 +1,236 @@
 [
   {
-    "name": "North Route",
-    "images": {
-      "30": "NorthRoute_30-1.jpg",
-      "25": "NorthRoute_25-1.jpg"
-    }
+    "name": "North",
+    "rings": [
+      {
+        "name": "North Route",
+        "type": "route",
+        "images": {
+          "30": "NorthRoute_30-1.jpg",
+          "25": "NorthRoute_25-1.jpg"
+        }
+      },
+      {
+        "name": "Crystal - Backus",
+        "type": "leg",
+        "images": {
+          "30": "Crystal-Backus_30-1.jpg",
+          "25": "Crystal-Backus_25-1.jpg"
+        }
+      },
+      {
+        "name": "Backus - CalCity",
+        "type": "leg",
+        "images": {
+          "30": "Backus-CalCity_30-1.jpg",
+          "25": "Backus-CalCity_25-1.jpg"
+        }
+      },
+      {
+        "name": "CalCity - Inyokern",
+        "type": "leg",
+        "images": {
+          "30": "CalCity-Inyokern_30-1.jpg",
+          "25": "CalCity-Inyokern_25-1.jpg"
+        }
+      },
+      {
+        "name": "Inyokern - Lone Pine",
+        "type": "leg",
+        "images": {
+          "30": "Inyokern-Lonepine_30-1.jpg",
+          "25": "Inyokern-Lonepine_25-1.jpg"
+        }
+      },
+      {
+        "name": "Crystal",
+        "type": "landout",
+        "images": {
+          "30": "Crystal_30-1.jpg",
+          "25": "Crystal_25-1.jpg"
+        }
+      },
+      {
+        "name": "Backus",
+        "type": "landout",
+        "images": {
+          "30": "Backus_30-1.jpg",
+          "25": "Backus_25-1.jpg"
+        }
+      },
+      {
+        "name": "CalCity",
+        "type": "landout",
+        "images": {
+          "30": "CalCity_30-1.jpg",
+          "25": "CalCity_25-1.jpg"
+        }
+      },
+      {
+        "name": "Inyokern",
+        "type": "landout",
+        "images": {
+          "30": "Inyokern_30-1.jpg",
+          "25": "Inyokern_25-1.jpg"
+        }
+      },
+      {
+        "name": "Cindercone",
+        "type": "landout",
+        "images": {
+          "30": "Cindercone_30-1.jpg",
+          "25": "Cindercone_25-1.jpg"
+        }
+      },
+      {
+        "name": "Olancha",
+        "type": "landout",
+        "images": {
+          "30": "Olancha_30-1.jpg",
+          "25": "Olancha_25-1.jpg"
+        }
+      },
+      {
+        "name": "Lonepine",
+        "type": "landout",
+        "images": {
+          "30": "Lonepine_30-1.jpg",
+          "25": "Lonepine_25-1.jpg"
+        }
+      },
+      {
+        "name": "Independence",
+        "type": "landout",
+        "images": {
+          "30": "Independence_30-1.jpg",
+          "25": "Independence_25-1.jpg"
+        }
+      },
+      {
+        "name": "Bishop",
+        "type": "landout",
+        "images": {
+          "30": "Bishop_30-1.jpg",
+          "25": "Bishop_25-1.jpg"
+        }
+      }
+    ]
   },
   {
-    "name": "Inyo - Lonepine",
-    "images": {
-      "30": "Inyo-Lonepine_30-1.jpg",
-      "25": "Inyo-Lonepine_25-1.jpg"
-    }
-  },
-  {
-    "name": "Backus",
-    "images": {
-      "30": "Backus_30-1.jpg",
-      "25": "Backus_25-1.jpg"
-    }
-  },
-  {
-    "name": "Bishop",
-    "images": {
-      "30": "Bishop_30-1.jpg",
-      "25": "Bishop_25-1.jpg"
-    }
-  },
-  {
-    "name": "CalCity",
-    "images": {
-      "30": "CalCity_30-1.jpg",
-      "25": "CalCity_25-1.jpg"
-    }
-  },
-  {
-    "name": "Cindercone",
-    "images": {
-      "30": "Cindercone_30-1.jpg",
-      "25": "Cindercone_25-1.jpg"
-    }
-  },
-  {
-    "name": "Crystal",
-    "images": {
-      "30": "Crystal_30-1.jpg",
-      "25": "Crystal_25-1.jpg"
-    }
-  },
-  {
-    "name": "Independence",
-    "images": {
-      "30": "Independence_30-1.jpg",
-      "25": "Independence_25-1.jpg"
-    }
-  },
-  {
-    "name": "Inyokern",
-    "images": {
-      "30": "Inyokern_30-1.jpg",
-      "25": "Inyokern_25-1.jpg"
-    }
-  },
-  {
-    "name": "Lonepine",
-    "images": {
-      "30": "Lonepine_30-1.jpg",
-      "25": "Lonepine_25-1.jpg"
-    }
-  },
-  {
-    "name": "Olancha",
-    "images": {
-      "30": "Olancha_30-1.jpg",
-      "25": "Olancha_25-1.jpg"
-    }
+    "name": "South",
+    "rings": [
+      {
+        "name": "South Route",
+        "type": "route",
+        "images": {
+          "30": "NorthRoute_30-1.jpg",
+          "25": "NorthRoute_25-1.jpg"
+        }
+      },
+      {
+        "name": "Crystal - Backus",
+        "type": "leg",
+        "images": {
+          "30": "Crystal-Backus_30-1.jpg",
+          "25": "Crystal-Backus_25-1.jpg"
+        }
+      },
+      {
+        "name": "Backus - CalCity",
+        "type": "leg",
+        "images": {
+          "30": "Backus-CalCity_30-1.jpg",
+          "25": "Backus-CalCity_25-1.jpg"
+        }
+      },
+      {
+        "name": "CalCity - Inyokern",
+        "type": "leg",
+        "images": {
+          "30": "CalCity-Inyokern_30-1.jpg",
+          "25": "CalCity-Inyokern_25-1.jpg"
+        }
+      },
+      {
+        "name": "Inyokern - Lone Pine",
+        "type": "leg",
+        "images": {
+          "30": "Inyokern-Lonepine_30-1.jpg",
+          "25": "Inyokern-Lonepine_25-1.jpg"
+        }
+      },
+      {
+        "name": "Crystal",
+        "type": "landout",
+        "images": {
+          "30": "Crystal_30-1.jpg",
+          "25": "Crystal_25-1.jpg"
+        }
+      },
+      {
+        "name": "Backus",
+        "type": "landout",
+        "images": {
+          "30": "Backus_30-1.jpg",
+          "25": "Backus_25-1.jpg"
+        }
+      },
+      {
+        "name": "CalCity",
+        "type": "landout",
+        "images": {
+          "30": "CalCity_30-1.jpg",
+          "25": "CalCity_25-1.jpg"
+        }
+      },
+      {
+        "name": "Inyokern",
+        "type": "landout",
+        "images": {
+          "30": "Inyokern_30-1.jpg",
+          "25": "Inyokern_25-1.jpg"
+        }
+      },
+      {
+        "name": "Cindercone",
+        "type": "landout",
+        "images": {
+          "30": "Cindercone_30-1.jpg",
+          "25": "Cindercone_25-1.jpg"
+        }
+      },
+      {
+        "name": "Olancha",
+        "type": "landout",
+        "images": {
+          "30": "Olancha_30-1.jpg",
+          "25": "Olancha_25-1.jpg"
+        }
+      },
+      {
+        "name": "Lonepine",
+        "type": "landout",
+        "images": {
+          "30": "Lonepine_30-1.jpg",
+          "25": "Lonepine_25-1.jpg"
+        }
+      },
+      {
+        "name": "Independence",
+        "type": "landout",
+        "images": {
+          "30": "Independence_30-1.jpg",
+          "25": "Independence_25-1.jpg"
+        }
+      },
+      {
+        "name": "Bishop",
+        "type": "landout",
+        "images": {
+          "30": "Bishop_30-1.jpg",
+          "25": "Bishop_25-1.jpg"
+        }
+      }
+    ]
   }
 ]

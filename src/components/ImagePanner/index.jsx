@@ -5,7 +5,7 @@ import "./styles.scss";
 
 export default function ImagePanner(props) {
   return (
-    <TransformWrapper initialScale={1}>
+    <TransformWrapper initialScale={1} centerOnInit={true}>
       <TransformComponent wrapperClass="ring__wrapper">
         {props.children}
       </TransformComponent>

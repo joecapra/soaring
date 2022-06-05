@@ -3,15 +3,26 @@
 .rangerings {
     @include content-section;
 
-    &__link{
-        width: 50%;
+    &__header {
+        width: 100%;
+        background-color: #292929;
+        color: #eeeeee;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    &__btn{
+        width: 80%;
         height: 50px;
-        background-color: rgb(199, 199, 199);
+        background-color: #777777;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
         margin: 10px auto;
+        cursor: pointer;
+        color: white;
     }
 }

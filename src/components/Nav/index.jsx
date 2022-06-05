@@ -9,7 +9,7 @@ export default function Nav(props) {
       <div
         className="nav__btn"
         onClick={() => {
-          props.onClick("rings");
+          props.onClick("ringsnav");
         }}
       >
         <img src={basepath + "rings.svg"} alt="" className="nav__btn-icon" />

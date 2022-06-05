@@ -5,6 +5,7 @@
     @include content-section;
 //    overflow: hidden;
 
+
     &__wrapper {
         height: 100% !important;
         width: 100% !important;
@@ -17,26 +18,44 @@
         transform: translateX(-50%);
         top: calc(100% - 100px);
         z-index: 1;
+        display: flex;
     }
     
     &__label {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 5px;
+        width: 100%;
+        color: #eeeeee;
+        top: 0px;
         height: 30px;
-        background-color: rgb(255, 255, 255);
+        background-color: #292929;
         padding: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1;
+
+        &-safety {
+            color: #8a8a8a;
+        }
     }
 
     &__navbtn {
-        width: 60px;
-        height: 30px;
+        width: 80px;
         margin: 10px;
+        background-color: #292929;
+        color: #eeeeee;
+        text-align: center;
+        border-radius: 5px;
+        padding:10px;
+        cursor: pointer;
+
+        &--active{
+            background-color:white;
+            color: black;
+            border: 1px solid #858585;
+        }
     }
+
+
 }
 

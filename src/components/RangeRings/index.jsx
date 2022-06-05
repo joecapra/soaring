@@ -1,33 +1,45 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "./styles.scss";
-import axios from "axios";
 
 export default function RangeRings(props) {
-  const [locations, setLocations] = useState([]);
+  const routeData = props.payload;
+  console.warn("ROUTE DATA====", routeData);
+  const ringData = routeData.rings;
+  console.warn("ROUTE RINGS====", ringData);
 
-  useEffect(() => {
-    const dataUrl = process.env.PUBLIC_URL + "/static/jsondata/rings.json";
-    axios.get(dataUrl).then((res) => {
-      setLocations(res.data);
+  const getRangeRings = (type) => {
+    return ringData.map((item) => {
+      if (item.type === type) {
+        return (
+          <div
+            className="rangerings__btn"
+            key={item.name}
+            onClick={() => {
+              props.onClick("ring", {
+                routeData: routeData,
+                ringData: item,
+              });
+            }}
+          >
+            {item.name}
+          </div>
+        );
+      } else {
+        return null;
+      }
     });
-  }, []);
+  };
 
   return (
     <div className="rangerings">
-      {locations.map((location) => {
-        return (
-          <button
-            key={location.name}
-            onClick={() => {
-              props.onClick("ring", location);
-            }}
-            className="rangerings__link"
-          >
-            {location.name}
-          </button>
-        );
-      })}
+      <div className="rangerings__header">ROUTE</div>
+      {getRangeRings("route")}
+      <div className="rangerings__divider" />
+      <div className="rangerings__header">LEGS</div>
+      {getRangeRings("leg")}
+      <div className="rangerings__divider" />
+      <div className="rangerings__header">LANDOUTS</div>
+      {getRangeRings("landout")}
     </div>
   );
 }

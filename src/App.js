@@ -7,6 +7,7 @@ import RangeRingsNav from "./components/RangeRingsNav";
 import Ring from "./components/Ring";
 import Checklists from "./components/Checklists";
 import List from "./components/List";
+import Speeds from "./components/Speeds";
 
 function App() {
   const [currentPage, setCurrentPage] = useState();
@@ -30,6 +31,9 @@ function App() {
         break;
       case "list":
         setCurrentPage(<List listData={payload} />);
+        break;
+      case "speeds":
+        setCurrentPage(<Speeds />);
         break;
       default:
         setCurrentPage("home");

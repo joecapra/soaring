@@ -60,6 +60,7 @@ function App(props) {
       onUpdate: () => {
         console.warn("!!!!!!!!!!!!!!!ON UPDATE");
         setShowUpdateToast(true);
+        // registration.waiting.postMessage({type: 'SKIP_WAITING'})
       },
     });
     // serviceWorkerRegistration.unregister();

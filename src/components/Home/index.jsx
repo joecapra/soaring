@@ -4,73 +4,27 @@ import "./styles.scss";
 export default function Home() {
   return (
     <div className="home">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
-      incidunt quibusdam expedita quis dolorem quod cum modi perferendis et!
-      Consequatur ullam aperiam non quod, repellendus soluta explicabo.
-      Possimus, dicta hic? Lorem ipsum dolor sit, amet consectetur adipisicing
-      elit. Laudantium incidunt quibusdam expedita quis dolorem quod cum modi
-      perferendis et! Consequatur ullam aperiam non quod, repellendus soluta
-      explicabo. Possimus, dicta hic? Lorem ipsum dolor sit, amet consectetur
-      adipisicing elit. Laudantium incidunt quibusdam expedita quis dolorem quod
-      cum modi perferendis et! Consequatur ullam aperiam non quod, repellendus
-      soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor sit, amet
-      consectetur adipisicing elit. Laudantium incidunt quibusdam expedita quis
-      dolorem quod cum modi perferendis et! Consequatur ullam aperiam non quod,
-      repellendus soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor sit,
-      amet consectetur adipisicing elit. Laudantium incidunt quibusdam expedita
-      quis dolorem quod cum modi perferendis et! Consequatur ullam aperiam non
-      quod, repellendus soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor
-      sit, amet consectetur adipisicing elit. Laudantium incidunt quibusdam
-      expedita quis dolorem quod cum modi perferendis et! Consequatur ullam
-      aperiam non quod, repellendus soluta explicabo. Possimus, dicta hic? Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Laudantium incidunt
-      quibusdam expedita quis dolorem quod cum modi perferendis et! Consequatur
-      ullam aperiam non quod, repellendus soluta explicabo. Possimus, dicta hic?
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
-      incidunt quibusdam expedita quis dolorem quod cum modi perferendis et!
-      Consequatur ullam aperiam non quod, repellendus soluta explicabo.
-      Possimus, dicta hic? Lorem ipsum dolor sit, amet consectetur adipisicing
-      elit. Laudantium incidunt quibusdam expedita quis dolorem quod cum modi
-      perferendis et! Consequatur ullam aperiam non quod, repellendus soluta
-      explicabo. Possimus, dicta hic? Lorem ipsum dolor sit, amet consectetur
-      adipisicing elit. Laudantium incidunt quibusdam expedita quis dolorem quod
-      cum modi perferendis et! Consequatur ullam aperiam non quod, repellendus
-      soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor sit, amet
-      consectetur adipisicing elit. Laudantium incidunt quibusdam expedita quis
-      dolorem quod cum modi perferendis et! Consequatur ullam aperiam non quod,
-      repellendus soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor sit,
-      amet consectetur adipisicing elit. Laudantium incidunt quibusdam expedita
-      quis dolorem quod cum modi perferendis et! Consequatur ullam aperiam non
-      quod, repellendus soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor
-      sit, amet consectetur adipisicing elit. Laudantium incidunt quibusdam
-      expedita quis dolorem quod cum modi perferendis et! Consequatur ullam
-      aperiam non quod, repellendus soluta explicabo. Possimus, dicta hic? Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Laudantium incidunt
-      quibusdam expedita quis dolorem quod cum modi perferendis et! Consequatur
-      ullam aperiam non quod, repellendus soluta explicabo. Possimus, dicta hic?
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
-      incidunt quibusdam expedita quis dolorem quod cum modi perferendis et!
-      Consequatur ullam aperiam non quod, repellendus soluta explicabo.
-      Possimus, dicta hic? Lorem ipsum dolor sit, amet consectetur adipisicing
-      elit. Laudantium incidunt quibusdam expedita quis dolorem quod cum modi
-      perferendis et! Consequatur ullam aperiam non quod, repellendus soluta
-      explicabo. Possimus, dicta hic? Lorem ipsum dolor sit, amet consectetur
-      adipisicing elit. Laudantium incidunt quibusdam expedita quis dolorem quod
-      cum modi perferendis et! Consequatur ullam aperiam non quod, repellendus
-      soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor sit, amet
-      consectetur adipisicing elit. Laudantium incidunt quibusdam expedita quis
-      dolorem quod cum modi perferendis et! Consequatur ullam aperiam non quod,
-      repellendus soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor sit,
-      amet consectetur adipisicing elit. Laudantium incidunt quibusdam expedita
-      quis dolorem quod cum modi perferendis et! Consequatur ullam aperiam non
-      quod, repellendus soluta explicabo. Possimus, dicta hic? Lorem ipsum dolor
-      sit, amet consectetur adipisicing elit. Laudantium incidunt quibusdam
-      expedita quis dolorem quod cum modi perferendis et! Consequatur ullam
-      aperiam non quod, repellendus soluta explicabo. Possimus, dicta hic? Lorem
-      ipsum dolor sit, amet consectetur adipisicing elit. Laudantium incidunt
-      quibusdam expedita quis dolorem quod cum modi perferendis et! Consequatur
-      ullam aperiam non quod, repellendus soluta explicabo. Possimus, dicta hic?
-      END
+      <svg
+        className="home__glider"
+        version="1.1"
+        id="Layer_1"
+        x="0px"
+        y="0px"
+        viewBox="0 0 234.6 64"
+      >
+        <path
+          d="M42.7,34.4c-7.3-2.2-12.3-7.7-18.4-12.6c5.3-0.7,5.8-5.2,7.8-8.3c0.9-1.4,1.9-2,3.8-1.8c-0.7,2.3-1.4,4.4-2.1,6.6
+	C33,21.3,33.2,22,36,23c8.2,3,16.5,5.9,24.8,8.9c0.4,0.2,1,0.3,1.4,0.2c10.3-1.2,20.3,0.7,30.4,2.2c0.8,0.1,1.8,0,2.6-0.3
+	c17.6-5.3,35.1-10.7,52.6-16.1c0.5-0.2,1.1-0.5,1.6-0.5c3.5,0.1,5-2.1,6.2-4.8c0.9-2,2.1-3.8,3.1-5.8c0.8-1.6,2-2.1,4-2
+	c-0.8,3.4-1.7,6.7-2.4,10c-0.5,2.3-1.2,4.2-3.6,5c-0.5,0.2-0.7,0.9-1.1,1.4c-0.3,0.3-0.6,0.7-1,0.9c-1.3,0.5-2.8,0.5-3.9,1.2
+	c-9.6,5.9-20,10.1-30.9,13.1c-1,0.3-1.9,0.6-2.9,1.4c1.1,0.1,2.2,0.3,3.3,0.3c19.8,0.6,39.6,1.3,59.4,1.9c5,0.1,10,0.2,15,0.2
+	c3.1,0,3.9-0.5,4.6-3.5c1.6-7.4,3.1-14.7,4.6-22.1c0.8-3.7,1.5-7.5,2.2-11.4c-3,0-5.8,0-8.6,0c-0.1-0.2-0.1-0.3-0.2-0.5
+	c0.5-0.2,1.1-0.7,1.6-0.7C210.4,1.3,222,0.6,233.6,0c0.1,0,0.3,0.1,1,0.3c-1.2,0.3-1.8,0.5-2.5,0.6c-0.7,0.2-1.3,0.3-2.2,0.4
+	c0,0.7-0.1,1.5-0.1,2.2c-0.1,11.8-0.2,23.6-0.2,35.3c0,1.8-0.6,2.5-2.2,3c-3.2,1-6.3,2.2-9.5,3.4c-0.6,0.2-1.1,0.6-1.5,1
+	c-2,1.8-3.6,2.1-5.6,0.4c-1.4-1.2-2.8-1.4-4.5-1.3c-20.9,0.8-41.9,1.4-62.8,2.3c-19.5,0.8-38.8,2.8-57.9,7.1c-9.1,2-17.9,5.1-27,7.1
+	c-18,4-35.8,2.2-53.3-3.4c-1.3-0.4-2.6-1-3.7-1.7c-1.9-1.2-2.1-2.6-0.5-4.2c1.5-1.4,3.2-2.8,5-3.9C17.5,42,29.6,37.1,42.7,34.4z"
+        />
+      </svg>
     </div>
   );
 }

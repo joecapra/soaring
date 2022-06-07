@@ -18,7 +18,7 @@ function App(props) {
   const [showCacheCompleteToast, setShowCacheCompleteToast] = useState(false);
   const [showUpdateToast, setShowUpdateToast] = useState({
     waitingRegistration: null,
-    show: true,
+    show: false,
   });
 
   const loadPage = useCallback((page, payload) => {
@@ -55,30 +55,34 @@ function App(props) {
     // If you want your app to work offline and load faster, you can change
     // unregister() to register() below. Note this comes with some pitfalls.
     // Learn more about service workers: https://cra.link/PWA
+
     serviceWorkerRegistration.register({
       onSuccess: () => {
         console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
         setShowCacheCompleteToast(true);
+        setTimeout(() => {
+          setShowCacheCompleteToast(false);
+        }, 5000);
       },
       onUpdate: (registration) => {
         console.warn("!!!!!!!!!!!!!!!ON UPDATE");
         setShowUpdateToast({ waitingRegistration: registration, show: true });
       },
     });
+
     // serviceWorkerRegistration.unregister();
   }, [loadPage]);
 
   const doSkipWaiting = () => {
-    console.error(
-      "CALLED waiting registration=",
-      showUpdateToast.waitingRegistration
-    );
-    showUpdateToast.waitingRegistration.waiting.postMessage({
-      type: "SKIP_WAITING",
-    });
-    navigator.serviceWorker.controller.postMessage({
-      type: "SKIP_WAITING",
-    });
+    if (showUpdateToast.waitingRegistration) {
+      showUpdateToast.waitingRegistration.waiting.postMessage({
+        type: "SKIP_WAITING",
+      });
+      navigator.serviceWorker.controller.postMessage({
+        type: "SKIP_WAITING",
+      });
+    }
+    setShowUpdateToast({ waitingRegistration: null, show: false });
   };
 
   return (

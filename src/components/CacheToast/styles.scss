@@ -2,11 +2,14 @@
 
 .cachetoast {
     position: absolute;
-    bottom: 10%;
-    height: 50px;
-    background-color: red;
-    width: 90%;
-    border-radius: 10px;
-
+    top: 0;
+    left: 50%;
+    height: 30px;
+    background-color: #ff007f;
+    width: 100%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 

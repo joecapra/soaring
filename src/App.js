@@ -9,8 +9,10 @@ import Checklists from "./components/Checklists";
 import List from "./components/List";
 import Speeds from "./components/Speeds";
 
-function App() {
+function App(props) {
   const [currentPage, setCurrentPage] = useState();
+
+  const [ass, setAss] = useState(props.cachedForOfflineComplete);
 
   const loadPage = useCallback((page, payload) => {
     switch (page) {
@@ -45,10 +47,16 @@ function App() {
     loadPage("home");
   }, [loadPage]);
 
+  useEffect(() => {
+    console.log("something prop has changedto", props.cachedForOfflineComplete);
+    setAss(props.cachedForOfflineComplete);
+  }, [props.cachedForOfflineComplete]);
+
   return (
     <div className="App">
       <div className="content">{currentPage}</div>
       <Nav onClick={loadPage} />
+      <div className="toast">{ass ? "TRUE" : "FALSE"}</div>
     </div>
   );
 }

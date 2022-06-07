@@ -69,12 +69,5 @@ self.addEventListener("message", (event) => {
     self.skipWaiting();
   }
 });
-self.addEventListener("activate", (event) => {
-  console.error("ACTIVATED");
-});
-self.addEventListener("activated", (event) => {
-  console.error("ACTIVATED");
-});
 
 // Any other custom service worker logic can go here.
-// activate with notification TO DOM (!)

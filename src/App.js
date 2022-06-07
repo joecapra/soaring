@@ -16,7 +16,7 @@ function App(props) {
   const [currentPage, setCurrentPage] = useState();
 
   const [showCacheCompleteToast, setShowCacheCompleteToast] = useState(false);
-  const [showUpdateToast, setShowUpdateToast] = useState(false);
+  const [showUpdateToast, setShowUpdateToast] = useState(true);
 
   const loadPage = useCallback((page, payload) => {
     switch (page) {
@@ -66,6 +66,7 @@ function App(props) {
   }, [loadPage]);
 
   const doSkipWaiting = () => {
+    console.error("CALLED");
     navigator.serviceWorker.controller.postMessage({
       type: "SKIP_WAITING",
     });
@@ -76,13 +77,7 @@ function App(props) {
       <div className="content">{currentPage}</div>
       <Nav onClick={loadPage} />
       {showCacheCompleteToast ? <CacheToast /> : null}
-      {showUpdateToast ? (
-        <UpdateToast
-          onClick={() => {
-            doSkipWaiting();
-          }}
-        />
-      ) : null}
+      {showUpdateToast ? <UpdateToast action={doSkipWaiting} /> : null}
     </div>
   );
 }

@@ -16,7 +16,10 @@ function App(props) {
   const [currentPage, setCurrentPage] = useState();
 
   const [showCacheCompleteToast, setShowCacheCompleteToast] = useState(false);
-  const [showUpdateToast, setShowUpdateToast] = useState(true);
+  const [showUpdateToast, setShowUpdateToast] = useState({
+    waitingRegistration: null,
+    show: true,
+  });
 
   const loadPage = useCallback((page, payload) => {
     switch (page) {
@@ -57,16 +60,22 @@ function App(props) {
         console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
         setShowCacheCompleteToast(true);
       },
-      onUpdate: () => {
+      onUpdate: (registration) => {
         console.warn("!!!!!!!!!!!!!!!ON UPDATE");
-        setShowUpdateToast(true);
+        setShowUpdateToast({ waitingRegistration: registration, show: true });
       },
     });
     // serviceWorkerRegistration.unregister();
   }, [loadPage]);
 
   const doSkipWaiting = () => {
-    console.error("CALLED");
+    console.error(
+      "CALLED waiting registration=",
+      showUpdateToast.waitingRegistration
+    );
+    showUpdateToast.waitingRegistration.waiting.postMessage({
+      type: "SKIP_WAITING",
+    });
     navigator.serviceWorker.controller.postMessage({
       type: "SKIP_WAITING",
     });
@@ -77,7 +86,7 @@ function App(props) {
       <div className="content">{currentPage}</div>
       <Nav onClick={loadPage} />
       {showCacheCompleteToast ? <CacheToast /> : null}
-      {showUpdateToast ? <UpdateToast action={doSkipWaiting} /> : null}
+      {showUpdateToast.show ? <UpdateToast action={doSkipWaiting} /> : null}
     </div>
   );
 }

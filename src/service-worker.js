@@ -68,9 +68,26 @@ self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
     console.warn("TOLD TO RELOAD OKMIKE");
-    // event.data.window.location.reload();
-    //ok mike
+    self.clients
+      .matchAll({
+        includeUncontrolled: true,
+        type: "window",
+      })
+      .then((clients) => {
+        if (clients && clients.length) {
+          // Send a response - the clients
+          // array is ordered by last focused
+          clients[0].postMessage({
+            type: "RELOAD",
+          });
+        }
+      });
   }
 });
 
 // Any other custom service worker logic can go here.
+// Any other custom service worker logic can go here.
+// Any other custom service worker logic can go here.
+// Any other custom service worker logic can go here.
+// Any other custom service worker logic can go here.
+console.log("test");

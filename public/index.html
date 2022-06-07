@@ -42,4 +42,12 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    navigator.serviceWorker.onmessage = (event) => {
+      if (event.data && event.data.type === "RELOAD") {
+        window.location.reload();
+        console.error("INDEX>HTML RELOAD");
+      }
+    };
+  </script>
 </html>

@@ -60,18 +60,29 @@ function App(props) {
       onUpdate: () => {
         console.warn("!!!!!!!!!!!!!!!ON UPDATE");
         setShowUpdateToast(true);
-        // registration.waiting.postMessage({type: 'SKIP_WAITING'})
       },
     });
     // serviceWorkerRegistration.unregister();
   }, [loadPage]);
+
+  const doSkipWaiting = () => {
+    navigator.serviceWorker.controller.postMessage({
+      type: "SKIP_WAITING",
+    });
+  };
 
   return (
     <div className="App">
       <div className="content">{currentPage}</div>
       <Nav onClick={loadPage} />
       {showCacheCompleteToast ? <CacheToast /> : null}
-      {showUpdateToast ? <UpdateToast /> : null}
+      {showUpdateToast ? (
+        <UpdateToast
+          onClick={() => {
+            doSkipWaiting();
+          }}
+        />
+      ) : null}
     </div>
   );
 }

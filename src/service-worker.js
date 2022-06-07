@@ -67,6 +67,9 @@ registerRoute(
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
+    window.location.reload();
+    console.warn("TOLD TO RELOAD OKMIKE");
+    //ok mike
   }
 });
 

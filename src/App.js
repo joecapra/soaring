@@ -8,11 +8,15 @@ import Ring from "./components/Ring";
 import Checklists from "./components/Checklists";
 import List from "./components/List";
 import Speeds from "./components/Speeds";
+import CacheToast from "./components/CacheToast";
+import UpdateToast from "./components/UpdateToast";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 function App(props) {
   const [currentPage, setCurrentPage] = useState();
 
-  const [ass, setAss] = useState(props.cachedForOfflineComplete);
+  const [showCacheCompleteToast, setShowCacheCompleteToast] = useState(false);
+  const [showUpdateToast, setShowUpdateToast] = useState(false);
 
   const loadPage = useCallback((page, payload) => {
     switch (page) {
@@ -45,18 +49,28 @@ function App(props) {
 
   useEffect(() => {
     loadPage("home");
+    // If you want your app to work offline and load faster, you can change
+    // unregister() to register() below. Note this comes with some pitfalls.
+    // Learn more about service workers: https://cra.link/PWA
+    serviceWorkerRegistration.register({
+      onSuccess: () => {
+        console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
+        setShowCacheCompleteToast(true);
+      },
+      onUpdate: () => {
+        console.warn("!!!!!!!!!!!!!!!ON UPDATE");
+        setShowUpdateToast(true);
+      },
+    });
+    // serviceWorkerRegistration.unregister();
   }, [loadPage]);
-
-  useEffect(() => {
-    console.log("something prop has changedto", props.cachedForOfflineComplete);
-    setAss(props.cachedForOfflineComplete);
-  }, [props.cachedForOfflineComplete]);
 
   return (
     <div className="App">
       <div className="content">{currentPage}</div>
       <Nav onClick={loadPage} />
-      <div className="toast">{ass ? "TRUE" : "FALSE"}</div>
+      {showCacheCompleteToast ? <CacheToast /> : null}
+      {showUpdateToast ? <UpdateToast /> : null}
     </div>
   );
 }

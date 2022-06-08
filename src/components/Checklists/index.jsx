@@ -16,7 +16,9 @@ export default function Checklists(props) {
             onClick={() => {
               props.onClick("list", list.name);
             }}
-            className="checklists__btn"
+            className={`checklists__btn ${
+              list.complete ? "checklists__btn--complete" : ""
+            }`}
           >
             {list.name}
           </div>

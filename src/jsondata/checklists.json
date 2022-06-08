@@ -3,24 +3,28 @@
     "name": "Check1",
     "items": [
       {
-        "id": 0,
-        "task": "check this ",
-        "complete": false
+        "task": "check this "
       },
       {
-        "id": 1,
-        "task": "check that",
-        "complete": false
+        "task": "check that"
       },
       {
-        "id": 2,
-        "task": "check that",
-        "complete": false
+        "task": "check that"
       }
     ]
   },
   {
     "name": "Check2",
-    "items": ["Check this", "check that"]
+    "items": [
+      {
+        "task": "check this "
+      },
+      {
+        "task": "check that"
+      },
+      {
+        "task": "check that"
+      }
+    ]
   }
 ]

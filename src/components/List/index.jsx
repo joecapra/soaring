@@ -16,12 +16,19 @@ export default function List(props) {
   // - When it finds it, then update the object to the list thats in state
   useEffect(() => {
     const currentStore = [...store.checklists];
+
     const newStore = currentStore.map((item) => {
       if (item.name === listName) {
         item = list;
+        const checked = item.items.filter((task) => task.complete === true);
+        if (checked.length === item.items.length) {
+          console.error("LIST COMPLETE");
+          item.complete = true;
+        }
       }
       return item;
     });
+    console.warn("STORED TO STORE=", newStore);
     store.setChecklists(newStore);
   }, [list]);
 
@@ -50,12 +57,14 @@ export default function List(props) {
       return { ...item, complete: false };
     });
     updatedList.items = mapped;
+    updatedList.complete = false;
     setList(updatedList);
   };
 
   return (
     <div className="list" key={uuidv4()}>
       {list.items.map((item, idx) => {
+        item.id = idx;
         return (
           <div className="list__itemwrapper" key={uuidv4()}>
             <div

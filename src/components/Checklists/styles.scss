@@ -9,7 +9,7 @@
         @include btn;
 
         &--complete{
-            background-color: greenyellow;
+            background-color: $color-highlight;
         }
     }
 }

@@ -38,7 +38,7 @@
         fill: #eeeeee;
         
         &--active{
-            fill: rgb(255, 0, 187);
+            fill: $color-highlight
         }
     }
 }

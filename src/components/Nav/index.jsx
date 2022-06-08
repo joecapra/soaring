@@ -1,41 +1,92 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import "./styles.scss";
+
 export default function Nav(props) {
-  const basepath = process.env.PUBLIC_URL + "/static/images/icons/";
+  const [activeItem, setActiveItem] = useState("rings");
+  const iconRings = (
+    <svg
+      viewBox="0 0 512 512"
+      className={`nav__icon ${
+        activeItem === "rings" ? "nav__icon--active" : ""
+      }`}
+    >
+      <path
+        d="M288,256c0,17.7-14.3,32-32,32s-32-14.3-32-32s14.3-32,32-32S288,238.3,288,256z M112,256
+ c0-79.5,64.5-144,144-144s144,64.5,144,144s-64.5,144-144,144S112,335.5,112,256z M256,336c44.2,0,80-35.8,80-80s-35.8-80-80-80
+ s-80,35.8-80,80S211.8,336,256,336z M512,256c0,141.4-114.6,256-256,256S0,397.4,0,256S114.6,0,256,0S512,114.6,512,256z M256,64
+ C149.1,64,64,149.1,64,256c0,106,85.1,192,192,192c106,0,192-86,192-192C448,149.1,362,64,256,64z"
+      />
+    </svg>
+  );
+
+  const iconSpeeds = (
+    <svg
+      viewBox="0 0 512 512"
+      className={`nav__icon ${
+        activeItem === "speeds" ? "nav__icon--active" : ""
+      }`}
+    >
+      <path
+        d="M512,256c0,141.4-114.6,256-256,256S0,397.4,0,256S114.6,0,256,0S512,114.6,512,256z M256,64
+	c-17.7,0-32,14.3-32,32c0,17.7,14.3,32,32,32s32-14.3,32-32C288,78.3,273.7,64,256,64z M256,416c35.3,0,64-28.7,64-64
+	c0-17.4-6.9-33.1-18.1-44.6l63.2-145.7c6.2-12.2,0.7-26.3-11.4-31.7c-12.2-5.3-26.3,0.2-31.7,12.3L257.9,288c-0.6,0-1.3-0.9-1.9-0.9
+	c-35.3,0-64,29.6-64,64.9S220.7,416,256,416L256,416z M144,112c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32
+	S161.7,112,144,112z M96,288c17.7,0,32-14.3,32-32s-14.3-32-32-32c-17.7,0-32,14.3-32,32S78.3,288,96,288z M416,224
+	c-17.7,0-32,14.3-32,32s14.3,32,32,32s32-14.3,32-32S433.7,224,416,224z"
+      />
+    </svg>
+  );
+
+  const iconChecklists = (
+    <svg
+      viewBox="0 0 512 512"
+      className={`nav__icon ${
+        activeItem === "checklists" ? "nav__icon--active" : ""
+      }`}
+    >
+      <path
+        d="M152.1,38.2c9.8,8.9,10.6,24,1.7,33.9l-72,80c-4.4,4.8-10.6,7.7-17.2,7c-6.6,1.1-12.9-1.5-17.6-7l-40-40
+        c-9.4-8.5-9.4-23.7,0-33.1c9.4-9.4,24.6-9.4,33.9,0l22.1,22.1l55.1-61.2C127,30.1,142.2,29.3,152.1,38.2L152.1,38.2z M152.1,198.2
+        c9.8,8.8,10.6,24,1.7,33.9l-72,80c-4.4,4.8-10.6,7.7-17.2,7c-6.6,1.1-12.9-1.5-17.6-7l-40-40c-9.4-8.5-9.4-23.7,0-33.1
+        c9.4-9.3,24.6-9.3,33.9,0l22.1,22.1l55.1-61.2C127,190.1,142.2,189.3,152.1,198.2L152.1,198.2z M224,96c0-17.7,14.3-32,32-32h224
+        c17.7,0,32,14.3,32,32c0,17.7-14.3,32-32,32H256C238.3,128,224,113.7,224,96L224,96z M224,256c0-17.7,14.3-32,32-32h224
+        c17.7,0,32,14.3,32,32s-14.3,32-32,32H256C238.3,288,224,273.7,224,256z M160,416c0-17.7,14.3-32,32-32h288c17.7,0,32,14.3,32,32
+        s-14.3,32-32,32H192C174.3,448,160,433.7,160,416z M0,416c0-26.5,21.5-48,48-48s48,21.5,48,48s-21.5,48-48,48S0,442.5,0,416z"
+      />
+    </svg>
+  );
 
   return (
     <div className="nav">
       <div className="nav__inner">
         <div
           className="nav__btn"
-          onClick={() => {
+          onClick={(e) => {
+            setActiveItem("rings");
             props.onClick("ringsnav");
           }}
         >
-          <img src={basepath + "rings.svg"} alt="" className="nav__btn-icon" />
+          {iconRings}
         </div>
         <div className="nav__divider" />
         <div
           className="nav__btn"
           onClick={() => {
+            setActiveItem("speeds");
             props.onClick("speeds");
           }}
         >
-          <img src={basepath + "speeds.svg"} alt="" className="nav__btn-icon" />
+          {iconSpeeds}
         </div>
         <div className="nav__divider" />
         <div
           className="nav__btn"
           onClick={() => {
+            setActiveItem("checklists");
             props.onClick("checklists");
           }}
         >
-          <img
-            src={basepath + "checklist.svg"}
-            alt=""
-            className="nav__btn-icon"
-          />
+          {iconChecklists}
         </div>
       </div>
     </div>

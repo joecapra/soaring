@@ -31,4 +31,14 @@
             fill: white;
         }
     }
+
+    .nav__icon{
+        width: 40px;
+        aspect-ratio: 1;
+        fill: #eeeeee;
+        
+        &--active{
+            fill: rgb(255, 0, 187);
+        }
+    }
 }

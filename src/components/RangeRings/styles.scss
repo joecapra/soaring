@@ -13,16 +13,6 @@
     }
 
     &__btn{
-        width: 80%;
-        height: 50px;
-        background-color: #777777;
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-shrink: 0;
-        margin: 10px auto;
-        cursor: pointer;
-        color: white;
+        @include btn;
     }
 }

@@ -56,21 +56,21 @@ function App(props) {
     // unregister() to register() below. Note this comes with some pitfalls.
     // Learn more about service workers: https://cra.link/PWA
 
-    serviceWorkerRegistration.register({
-      onSuccess: () => {
-        console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
-        setShowCacheCompleteToast(true);
-        setTimeout(() => {
-          setShowCacheCompleteToast(false);
-        }, 5000);
-      },
-      onUpdate: (registration) => {
-        console.warn("!!!!!!!!!!!!!!!ON UPDATE");
-        setShowUpdateToast({ waitingRegistration: registration, show: true });
-      },
-    });
+    // serviceWorkerRegistration.register({
+    //   onSuccess: () => {
+    //     console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
+    //     setShowCacheCompleteToast(true);
+    //     setTimeout(() => {
+    //       setShowCacheCompleteToast(false);
+    //     }, 5000);
+    //   },
+    //   onUpdate: (registration) => {
+    //     console.warn("!!!!!!!!!!!!!!!ON UPDATE");
+    //     setShowUpdateToast({ waitingRegistration: registration, show: true });
+    //   },
+    // });
 
-    // serviceWorkerRegistration.unregister();
+    serviceWorkerRegistration.unregister();
   }, [loadPage]);
 
   const doSkipWaiting = () => {

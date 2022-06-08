@@ -16,15 +16,15 @@ export default function Checklists(props) {
     <div className="checklists">
       {lists.map((list) => {
         return (
-          <button
+          <div
             key={list.name}
             onClick={() => {
               props.onClick("list", list);
             }}
-            className="rangerings__link"
+            className="checklists__btn"
           >
             {list.name}
-          </button>
+          </div>
         );
       })}
     </div>

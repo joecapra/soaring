@@ -3,9 +3,7 @@ import "./styles.scss";
 
 export default function RangeRings(props) {
   const routeData = props.payload;
-  console.warn("ROUTE DATA====", routeData);
   const ringData = routeData.rings;
-  console.warn("ROUTE RINGS====", ringData);
 
   const getRangeRings = (type) => {
     return ringData.map((item) => {

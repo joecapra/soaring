@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import ImagePanner from "../ImagePanner";
+
 import "./styles.scss";
 
 export default function Ring(props) {
@@ -18,7 +19,6 @@ export default function Ring(props) {
     setActiveBtn(ratio);
   };
 
-  // Display initial 30:1 image
   useEffect(() => {
     setRingImage(ringData.images["30"]);
   }, [ringData.images]);

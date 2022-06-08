@@ -10,6 +10,7 @@ import List from "./components/List";
 import Speeds from "./components/Speeds";
 import CacheToast from "./components/CacheToast";
 import UpdateToast from "./components/UpdateToast";
+import { StoreProvider } from "./components/StoreContext";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 function App(props) {
@@ -87,10 +88,12 @@ function App(props) {
 
   return (
     <div className="App">
-      <div className="content">{currentPage}</div>
-      <Nav onClick={loadPage} />
-      {showCacheCompleteToast ? <CacheToast /> : null}
-      {showUpdateToast.show ? <UpdateToast action={doSkipWaiting} /> : null}
+      <StoreProvider>
+        <div className="content">{currentPage}</div>
+        <Nav onClick={loadPage} />
+        {showCacheCompleteToast ? <CacheToast /> : null}
+        {showUpdateToast.show ? <UpdateToast action={doSkipWaiting} /> : null}
+      </StoreProvider>
     </div>
   );
 }

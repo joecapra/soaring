@@ -88,8 +88,18 @@ export default function List(props) {
           </div>
         );
       })}
-      <div className="list__resetbtn" onClick={reset}>
-        RESET
+      <div className="list__btnwrapper">
+        <div
+          className="list__btn"
+          onClick={() => {
+            props.onClick("checklists");
+          }}
+        >
+          BACK
+        </div>
+        <div className="list__btn list__btn-clear" onClick={reset}>
+          CLEAR CHECKLIST
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,16 @@
     align-items: center;
     flex-direction: column;
 
-    &__resetbtn {
+    &__btnwrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    &__btn {
         width: 60%;
         background-color: #9d9d9d;
         height: 60px;
@@ -19,8 +28,17 @@
         font-size: 1.2em;
         font-weight: bold;
         border-radius: 5px;
-        margin: 50px;
+        // margin: 50px;
         cursor: pointer;
+
+        &-clear {
+            width: fit-content;
+            height: 40px;
+            font-size: .8rem;
+            font-weight: normal;
+            margin-top: 40px;
+            padding: 0 20px;
+        }
     }
 
     &__divider {
@@ -32,6 +50,7 @@
     &__itemwrapper {
         width: 100%;
         min-height: 60px;
+        border-bottom: 1px solid #383838;
     }
 
     &__item {

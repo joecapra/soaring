@@ -50,7 +50,7 @@ function App(props) {
         setCurrentPage(<Checklists onClick={loadPage} />);
         break;
       case "list":
-        setCurrentPage(<List listName={payload} />);
+        setCurrentPage(<List onClick={loadPage} listName={payload} />);
         break;
       case "speeds":
         setCurrentPage(<Speeds />);

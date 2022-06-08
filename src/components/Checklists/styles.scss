@@ -1,9 +1,12 @@
 @import '../../styles/main.scss';
 
 .checklists {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
+    @include content-section;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 
     &__btn{
         @include btn;
@@ -11,5 +14,21 @@
         &--complete{
             background-color: $color-highlight;
         }
+    }
+
+
+    &__resetbtn {
+        width: 60%;
+        background-color: #9d9d9d;
+        height: 60px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 5px;
+        margin: 50px;
+        cursor: pointer;
     }
 }

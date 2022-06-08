@@ -1,11 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./styles.scss";
 import { StoreContext } from "../StoreContext";
 
 export default function Checklists(props) {
-  const [lists, setLists] = useState([]);
   const store = useContext(StoreContext);
   const checklists = store.checklists;
+
+  const clearAllChecklists = () => {
+    const currentLists = [...store.checklists];
+    const clearedLists = currentLists.map((item) => {
+      item.complete = false;
+      item.items.map((i) => {
+        i.complete = false;
+        return i;
+      });
+      return item;
+    });
+    store.setChecklists(clearedLists);
+  };
 
   return (
     <div className="checklists">
@@ -24,6 +36,9 @@ export default function Checklists(props) {
           </div>
         );
       })}
+      <div className="checklists__resetbtn" onClick={clearAllChecklists}>
+        CLEAR ALL CHECKLISTS
+      </div>
     </div>
   );
 }

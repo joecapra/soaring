@@ -4,30 +4,25 @@ import { StoreContext } from "../StoreContext";
 import "./styles.scss";
 
 export default function List(props) {
-  const [list, setList] = useState(props.listData);
-
   const store = useContext(StoreContext);
 
+  const listName = props.listName;
+  const foundList = store.checklists.find((list) => list.name === listName);
+  const [list, setList] = useState(foundList);
+
+  // Whenever the current list changes (items selected) store it back in the store
+  // - Clone current store checklists arr
+  // - Map through it to find the checklist that matches the name of the current one
+  // - When it finds it, then update the object to the list thats in state
   useEffect(() => {
-    console.warn("LIST USEFFECT=", list);
-    console.warn("STORELIST=", store.checklists);
-
-    checkIfListCompleted();
-    let updatedList = [...store.checklists];
-    if (updatedList.length > 0) {
-      updatedList.map((item) => {
-        if (item.name === list.name) {
-          item.items = list.items;
-        }
-        return item;
-      });
-      store.setChecklists(updatedList);
-    } else {
-      updatedList.push(list);
-    }
-
-    store.setChecklists(updatedList);
-    // console.warn("UPDATED STORE CHECKLISTS=", store.checklists);
+    const currentStore = [...store.checklists];
+    const newStore = currentStore.map((item) => {
+      if (item.name === listName) {
+        item = list;
+      }
+      return item;
+    });
+    store.setChecklists(newStore);
   }, [list]);
 
   const checkIfListCompleted = () => {
@@ -39,13 +34,14 @@ export default function List(props) {
   // Toggle checkbox
   const toggleCheck = (id) => {
     const updatedList = { ...list };
-    const mapped = updatedList.items.map((item) => {
+    const mappedItems = updatedList.items.map((item) => {
       return item.id === Number(id)
         ? { ...item, complete: !item.complete }
         : { ...item };
     });
-    updatedList.items = mapped;
+    updatedList.items = mappedItems;
     setList(updatedList);
+    // store.setChecklists(updatedList);
   };
 
   const reset = () => {
@@ -80,18 +76,12 @@ export default function List(props) {
               {item.task}
               {item.id}
             </div>
-
-            <div className="list__divider"></div>
-            {idx === list.length - 1 ? (
-              <div className="list__resetbtn" onClick={reset}>
-                RESET
-              </div>
-            ) : (
-              ""
-            )}
           </div>
         );
       })}
+      <div className="list__resetbtn" onClick={reset}>
+        RESET
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useContext } from "react";
 import "./app.scss";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
@@ -10,17 +10,27 @@ import List from "./components/List";
 import Speeds from "./components/Speeds";
 import CacheToast from "./components/CacheToast";
 import UpdateToast from "./components/UpdateToast";
-import { StoreProvider } from "./components/StoreContext";
+import { StoreContext } from "./components/StoreContext";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import axios from "axios";
 
 function App(props) {
   const [currentPage, setCurrentPage] = useState();
+  const store = useContext(StoreContext);
 
   const [showCacheCompleteToast, setShowCacheCompleteToast] = useState(false);
   const [showUpdateToast, setShowUpdateToast] = useState({
     waitingRegistration: null,
     show: false,
   });
+
+  useEffect(() => {
+    const dataUrl = process.env.PUBLIC_URL + "/static/jsondata/checklists.json";
+    axios.get(dataUrl).then((res) => {
+      console.warn("RES DATA=========", res.data);
+      store.setChecklists(res.data);
+    });
+  }, []);
 
   const loadPage = useCallback((page, payload) => {
     switch (page) {
@@ -40,7 +50,7 @@ function App(props) {
         setCurrentPage(<Checklists onClick={loadPage} />);
         break;
       case "list":
-        setCurrentPage(<List listData={payload} />);
+        setCurrentPage(<List listName={payload} />);
         break;
       case "speeds":
         setCurrentPage(<Speeds />);
@@ -88,12 +98,10 @@ function App(props) {
 
   return (
     <div className="App">
-      <StoreProvider>
-        <div className="content">{currentPage}</div>
-        <Nav onClick={loadPage} />
-        {showCacheCompleteToast ? <CacheToast /> : null}
-        {showUpdateToast.show ? <UpdateToast action={doSkipWaiting} /> : null}
-      </StoreProvider>
+      <div className="content">{currentPage}</div>
+      <Nav onClick={loadPage} />
+      {showCacheCompleteToast ? <CacheToast /> : null}
+      {showUpdateToast.show ? <UpdateToast action={doSkipWaiting} /> : null}
     </div>
   );
 }

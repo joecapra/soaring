@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./styles.scss";
-import axios from "axios";
+import { StoreContext } from "../StoreContext";
 
 export default function Checklists(props) {
   const [lists, setLists] = useState([]);
-
-  useEffect(() => {
-    console.warn("CHECKLISTS====");
-    const dataUrl = process.env.PUBLIC_URL + "/static/jsondata/checklists.json";
-    axios.get(dataUrl).then((res) => {
-      setLists(res.data);
-    });
-  }, []);
+  const store = useContext(StoreContext);
+  const checklists = store.checklists;
 
   return (
     <div className="checklists">
-      {lists.map((list) => {
+      {checklists.map((list) => {
         return (
           <div
             key={list.name}
             onClick={() => {
-              props.onClick("list", list);
+              props.onClick("list", list.name);
             }}
             className="checklists__btn"
           >

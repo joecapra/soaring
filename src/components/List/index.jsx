@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./styles.scss";
 
 export default function List(props) {
@@ -27,7 +28,7 @@ export default function List(props) {
         return (
           <>
             <div
-              key={item.id}
+              key={uuidv4()}
               className={`list__item list__item${
                 item.complete === true ? "--disabled" : "--enabled"
               }`}
@@ -36,6 +37,7 @@ export default function List(props) {
               }}
             >
               <div
+                key={uuidv4()}
                 className={`list__checkbox ${
                   item.complete === true
                     ? "list__checkbox--checked list__checkbox--disabled"
@@ -44,6 +46,7 @@ export default function List(props) {
               />
               {item.task}
             </div>
+
             <div className="list__divider"></div>
             {idx === list.length - 1 ? (
               <div className="list__resetbtn" onClick={reset}>

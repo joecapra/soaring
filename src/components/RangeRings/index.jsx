@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./styles.scss";
 
 export default function RangeRings(props) {
@@ -11,7 +12,7 @@ export default function RangeRings(props) {
         return (
           <div
             className="rangerings__btn"
-            key={item.name}
+            key={uuidv4()}
             onClick={() => {
               props.onClick("ring", {
                 routeData: routeData,

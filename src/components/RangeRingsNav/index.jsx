@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./styles.scss";
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+
+import "./styles.scss";
 
 export default function RangeRingsNav(props) {
   const [route, setRoute] = useState([]);
@@ -17,7 +19,7 @@ export default function RangeRingsNav(props) {
       {route.map((item) => {
         return (
           <div
-            key={item.name}
+            key={uuidv4()}
             onClick={() => {
               props.onClick("rings", item);
             }}

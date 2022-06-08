@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import ImagePanner from "../ImagePanner";
 import "./styles.scss";
 
@@ -28,7 +29,7 @@ export default function Ring(props) {
     return btns.map((ratio) => {
       return (
         <div
-          key={ratio}
+          key={uuidv4()}
           className={`ring__navbtn ${
             activeBtn === ratio ? "ring__navbtn--active" : ""
           }`}

@@ -24,9 +24,10 @@ export function register(config) {
   console.warn("@@@@@@@@@ register()");
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     console.warn("@@@@@@@@@ 1");
-    console.warn("@@@@@@@@@ process.env.PUBLIC_URL", process.env.PUBLIC_URL);
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+    console.warn("@@@@@@@@@ publicUrl ", publicUrl);
+    console.warn("@@@@@@@@@ window.location.origin ", window.location.origin);
     if (publicUrl.origin !== window.location.origin) {
       console.warn("@@@@@@@@@ 2");
       // Our service worker won't work if PUBLIC_URL is on a different origin

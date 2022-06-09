@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { StoreProvider } from "./components/StoreContext";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,9 +20,9 @@ root.render(
 // serviceWorkerRegistration.register({
 //   onSuccess: () => {
 //     console.warn("!!!!!!!!!!!!!!!cachedForOfflineComplete change to true");
-//     cachedForOfflineComplete = true;
+//     //cachedForOfflineComplete = true;
 //   },
-//   onUpdate: () => (waitingToUpdate = true),
+//   onUpdate: () => console.warn("!!!!!!!!!!!!!!!update change to true"),
 // });
 // serviceWorkerRegistration.unregister();
 

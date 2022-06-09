@@ -21,7 +21,7 @@ function App(props) {
   const [showCacheCompleteToast, setShowCacheCompleteToast] = useState(false);
   const [showUpdateToast, setShowUpdateToast] = useState({
     waitingRegistration: null,
-    show: false,
+    show: true,
   });
 
   useEffect(() => {
@@ -68,32 +68,49 @@ function App(props) {
     // unregister() to register() below. Note this comes with some pitfalls.
     // Learn more about service workers: https://cra.link/PWA
 
-    serviceWorkerRegistration.register({
-      onSuccess: () => {
-        console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
-        // setShowCacheCompleteToast(true);
-        // setTimeout(() => {
-        //   setShowCacheCompleteToast(false);
-        // }, 5000);
-      },
-      onUpdate: (registration) => {
-        console.warn("!!!!!!!!!!!!!!!ON UPDATE");
-        setShowUpdateToast({ waitingRegistration: registration, show: true });
-      },
-    });
+    // serviceWorkerRegistration.register({
+    //   onSuccess: () => {
+    //     console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
+    //     // setShowCacheCompleteToast(true);
+    //     // setTimeout(() => {
+    //     //   setShowCacheCompleteToast(false);
+    //     // }, 5000);
+    //   },
+    //   onUpdate: (registration) => {
+    //     console.warn("!!!!!!!!!!!!!!!ON UPDATE");
+    //     setShowUpdateToast({ waitingRegistration: registration, show: true });
+    //   },
+    // });
 
     // serviceWorkerRegistration.unregister();
   }, [loadPage]);
   // }, []);
 
+  // useEffect(() => {
+  serviceWorkerRegistration.register({
+    onSuccess: () => {
+      console.warn("!!!!!!!!!!!!!!!ON REGISTER SUCCESS OK OK2ssss2!!!!!!!!!!");
+      // setShowCacheCompleteToast(true);
+      // setTimeout(() => {
+      //   setShowCacheCompleteToast(false);
+      // }, 5000);
+    },
+    onUpdate: (registration) => {
+      console.warn("!!!!!!!!!!!!!!!ON UPDATE OK OK2ssss2!!!!!!!!");
+      // setShowUpdateToast({ waitingRegistration: registration, show: true });
+    },
+  });
+  // }, []);
+
   const doSkipWaiting = () => {
+    console.warn("DO CUSTOM SKIP WAITING");
     if (showUpdateToast.waitingRegistration) {
       showUpdateToast.waitingRegistration.waiting.postMessage({
         type: "SKIP_WAITING",
       });
-      navigator.serviceWorker.controller.postMessage({
-        type: "SKIP_WAITING",
-      });
+      // navigator.serviceWorker.controller.postMessage({
+      //   type: "SKIP_WAITING",
+      // });
     }
     setShowUpdateToast({ waitingRegistration: null, show: false });
   };

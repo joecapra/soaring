@@ -87,19 +87,21 @@ function App(props) {
   // }, []);
 
   // useEffect(() => {
-  serviceWorkerRegistration.register({
-    onSuccess: () => {
-      console.warn("!!!!!!!!!!!!!!!ON REGISTER SUCCESS OK OK2ssss2!!!!!!!!!!");
-      // setShowCacheCompleteToast(true);
-      // setTimeout(() => {
-      //   setShowCacheCompleteToast(false);
-      // }, 5000);
-    },
-    onUpdate: (registration) => {
-      console.warn("!!!!!!!!!!!!!!!ON UPDATE OK OK2ssss2!!!!!!!!");
-      // setShowUpdateToast({ waitingRegistration: registration, show: true });
-    },
-  });
+  //   serviceWorkerRegistration.register({
+  //     onSuccess: (registration) => {
+  //       console.warn(
+  //         "!!!!!!!!!!!!!!!ON REGISTER SUCCESS OK OK2ssss2!!!!!!!!!!"
+  //       );
+  //       // setShowCacheCompleteToast(true);
+  //       // setTimeout(() => {
+  //       //   setShowCacheCompleteToast(false);
+  //       // }, 5000);
+  //     },
+  //     onUpdate: (registration) => {
+  //       console.warn("!!!!!!!!!!!!!!!ON UPDATE OK OK2ssss2!!!!!!!!");
+  //       // setShowUpdateToast({ waitingRegistration: registration, show: true });
+  //     },
+  //   });
   // }, []);
 
   const doSkipWaiting = () => {

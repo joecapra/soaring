@@ -70,19 +70,19 @@ function App(props) {
 
     serviceWorkerRegistration.register({
       onSuccess: () => {
-        // console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
-        // setShowCacheCompleteToast(true);
-        // setTimeout(() => {
-        //   setShowCacheCompleteToast(false);
-        // }, 5000);
+        console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
+        setShowCacheCompleteToast(true);
+        setTimeout(() => {
+          setShowCacheCompleteToast(false);
+        }, 5000);
       },
       onUpdate: (registration) => {
-        // console.warn("!!!!!!!!!!!!!!!ON UPDATE");
-        // setShowUpdateToast({ waitingRegistration: registration, show: true });
+        console.warn("!!!!!!!!!!!!!!!ON UPDATE");
+        setShowUpdateToast({ waitingRegistration: registration, show: true });
       },
     });
 
-    serviceWorkerRegistration.unregister();
+    // serviceWorkerRegistration.unregister();
   }, [loadPage]);
   // }, []);
 

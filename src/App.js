@@ -71,10 +71,10 @@ function App(props) {
     serviceWorkerRegistration.register({
       onSuccess: () => {
         console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
-        setShowCacheCompleteToast(true);
-        setTimeout(() => {
-          setShowCacheCompleteToast(false);
-        }, 5000);
+        // setShowCacheCompleteToast(true);
+        // setTimeout(() => {
+        //   setShowCacheCompleteToast(false);
+        // }, 5000);
       },
       onUpdate: (registration) => {
         console.warn("!!!!!!!!!!!!!!!ON UPDATE");

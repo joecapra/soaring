@@ -21,10 +21,14 @@ const isLocalhost = Boolean(
 );
 
 export function register(config) {
+  console.warn("@@@@@@@@@ register()");
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
+    console.warn("@@@@@@@@@ 1");
+    console.warn("@@@@@@@@@ process.env.PUBLIC_URL", process.env.PUBLIC_URL);
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
     if (publicUrl.origin !== window.location.origin) {
+      console.warn("@@@@@@@@@ 2");
       // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
@@ -32,8 +36,8 @@ export function register(config) {
     }
 
     window.addEventListener("load", () => {
+      console.warn("@@@@@@@@@ 3");
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
@@ -48,6 +52,7 @@ export function register(config) {
         });
       } else {
         // Is not localhost. Just register service worker
+        console.warn("@@@@@@@@@ 4");
         registerValidSW(swUrl, config);
       }
     });
@@ -55,17 +60,23 @@ export function register(config) {
 }
 
 function registerValidSW(swUrl, config) {
+  console.warn("@@@@@@@@@ registerValidSW()");
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
+      console.warn("@@@@@@@@@ 5");
       registration.onupdatefound = () => {
+        console.warn("@@@@@@@@@ 6");
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
         }
         installingWorker.onstatechange = () => {
+          console.warn("@@@@@@@@@ 7");
           if (installingWorker.state === "installed") {
+            console.warn("@@@@@@@@@ 8");
             if (navigator.serviceWorker.controller) {
+              console.warn("@@@@@@@@@ 9");
               // At this point, the updated precached content has been fetched,
               // but the previous service worker will still serve the older
               // content until all client tabs are closed.
@@ -99,11 +110,13 @@ function registerValidSW(swUrl, config) {
 }
 
 function checkValidServiceWorker(swUrl, config) {
+  console.warn("@@@@@@@@@ checkValidServiceWorker()");
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { "Service-Worker": "script" },
   })
     .then((response) => {
+      console.warn("@@@@@@@@@ 11");
       // Ensure service worker exists, and that we really are getting a JS file.
       const contentType = response.headers.get("content-type");
       if (
@@ -112,12 +125,14 @@ function checkValidServiceWorker(swUrl, config) {
       ) {
         // No service worker found. Probably a different app. Reload the page.
         navigator.serviceWorker.ready.then((registration) => {
+          console.warn("@@@@@@@@@ 12");
           registration.unregister().then(() => {
             window.location.reload();
           });
         });
       } else {
         // Service worker found. Proceed as normal.
+        console.warn("@@@@@@@@@ 13");
         registerValidSW(swUrl, config);
       }
     })
@@ -129,6 +144,7 @@ function checkValidServiceWorker(swUrl, config) {
 }
 
 export function unregister() {
+  console.warn("@@@@@@@@@ unregister");
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.ready
       .then((registration) => {

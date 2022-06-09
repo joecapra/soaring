@@ -6,11 +6,11 @@ import { StoreProvider } from "./components/StoreContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  // <React.StrictMode>
-  <StoreProvider>
-    <App />
-  </StoreProvider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <StoreProvider>
+      <App />
+    </StoreProvider>
+  </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change

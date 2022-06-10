@@ -8,7 +8,7 @@
     background-color: #ff007f;
     width: 100%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -18,6 +18,11 @@
         border-radius: 5px;
         padding: 3px 5px;
         font-size: .9rem;
+        cursor: pointer;
+    }
+
+    &--visible {
+        display: flex;
     }
 }
 

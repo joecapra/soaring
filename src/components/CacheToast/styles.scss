@@ -8,8 +8,12 @@
     background-color: #ff007f;
     width: 100%;
     transform: translateX(-50%);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
+
+    &--visible{
+        display: flex;
+    }
 }
 

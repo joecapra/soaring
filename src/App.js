@@ -18,20 +18,6 @@ function App(props) {
   const [currentPage, setCurrentPage] = useState();
   const store = useContext(StoreContext);
 
-  const [showCacheCompleteToast, setShowCacheCompleteToast] = useState(false);
-  const [showUpdateToast, setShowUpdateToast] = useState({
-    waitingRegistration: null,
-    show: true,
-  });
-
-  useEffect(() => {
-    const dataUrl = process.env.PUBLIC_URL + "/static/jsondata/checklists.json";
-    axios.get(dataUrl).then((res) => {
-      console.warn("RES DATA=========", res.data);
-      store.setChecklists(res.data);
-    });
-  }, []);
-
   const loadPage = useCallback((page, payload) => {
     switch (page) {
       case "home":
@@ -62,67 +48,33 @@ function App(props) {
   }, []);
 
   useEffect(() => {
+    console.warn("!!!!!!!!!!!!!!!USE EFFECT APP JS []");
+
+    const dataUrl = process.env.PUBLIC_URL + "/static/jsondata/checklists.json";
+    axios.get(dataUrl).then((res) => {
+      console.warn("GOT CHECKLISTS JSON =========", res.data);
+      store.setChecklists(res.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    console.warn("!!!!!!!!!!!!!!!USE EFFECT LOAD PAGE APP JS [loadpage]");
     loadPage("home");
-
-    // If you want your app to work offline and load faster, you can change
-    // unregister() to register() below. Note this comes with some pitfalls.
-    // Learn more about service workers: https://cra.link/PWA
-
-    // serviceWorkerRegistration.register({
-    //   onSuccess: () => {
-    //     console.warn("!!!!!!!!!!!!!!!ON SUCCESS");
-    //     // setShowCacheCompleteToast(true);
-    //     // setTimeout(() => {
-    //     //   setShowCacheCompleteToast(false);
-    //     // }, 5000);
-    //   },
-    //   onUpdate: (registration) => {
-    //     console.warn("!!!!!!!!!!!!!!!ON UPDATE");
-    //     setShowUpdateToast({ waitingRegistration: registration, show: true });
-    //   },
-    // });
-
-    // serviceWorkerRegistration.unregister();
   }, [loadPage]);
-  // }, []);
-
-  // useEffect(() => {
-  //   serviceWorkerRegistration.register({
-  //     onSuccess: (registration) => {
-  //       console.warn(
-  //         "!!!!!!!!!!!!!!!ON REGISTER SUCCESS OK OK2ssss2!!!!!!!!!!"
-  //       );
-  //       // setShowCacheCompleteToast(true);
-  //       // setTimeout(() => {
-  //       //   setShowCacheCompleteToast(false);
-  //       // }, 5000);
-  //     },
-  //     onUpdate: (registration) => {
-  //       console.warn("!!!!!!!!!!!!!!!ON UPDATE OK OK2ssss2!!!!!!!!");
-  //       // setShowUpdateToast({ waitingRegistration: registration, show: true });
-  //     },
-  //   });
-  // }, []);
-
-  const doSkipWaiting = () => {
-    console.warn("DO CUSTOM SKIP WAITING");
-    if (showUpdateToast.waitingRegistration) {
-      showUpdateToast.waitingRegistration.waiting.postMessage({
-        type: "SKIP_WAITING",
-      });
-      // navigator.serviceWorker.controller.postMessage({
-      //   type: "SKIP_WAITING",
-      // });
-    }
-    setShowUpdateToast({ waitingRegistration: null, show: false });
-  };
 
   return (
     <div className="App">
-      <div className="content">{currentPage}</div>
+      <div id="thecontent" className="content">
+        {currentPage}
+      </div>
       <Nav onClick={loadPage} />
-      {showCacheCompleteToast ? <CacheToast /> : null}
-      {showUpdateToast.show ? <UpdateToast action={doSkipWaiting} /> : null}
+      <CacheToast />
+      <UpdateToast
+        action={() => {
+          props.skipWaitingHandler();
+        }}
+      />
+      app2
     </div>
   );
 }

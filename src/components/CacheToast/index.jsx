@@ -3,7 +3,7 @@ import "./styles.scss";
 
 export default function CacheToast(props) {
   return (
-    <div className={`cachetoast ${props.show ? "cachetoast--show" : ""}`}>
+    <div id="cachetoast" className="cachetoast">
       All files downloaded for offline use!
     </div>
   );

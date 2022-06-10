@@ -3,7 +3,7 @@ import "./styles.scss";
 
 export default function UpdateToast(props) {
   return (
-    <div className={`updatetoast ${props.show ? "updatetoast--show" : ""}`}>
+    <div id="updatetoast" className="updatetoast">
       A new app version is available!
       <div className="updatetoast__btn" onClick={props.action}>
         UPDATE

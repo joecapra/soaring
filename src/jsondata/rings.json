@@ -43,6 +43,22 @@
         }
       },
       {
+        "name": "Lone Pine - Bishop",
+        "type": "leg",
+        "images": {
+          "30": "Lonepine-Bishop_30-1.jpg",
+          "25": "Lonepine-Bishop_25-1.jpg"
+        }
+      },
+      {
+        "name": "Independence - Bishop",
+        "type": "leg",
+        "images": {
+          "30": "Independence-Bishop_30-1.jpg",
+          "25": "Independence-Bishop_25-1.jpg"
+        }
+      },
+      {
         "name": "Crystal",
         "type": "landout",
         "images": {

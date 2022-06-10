@@ -1,6 +1,6 @@
 [
   {
-    "name": "North",
+    "name": "Bishop",
     "rings": [
       {
         "name": "North Route",
@@ -117,7 +117,7 @@
     ]
   },
   {
-    "name": "South",
+    "name": "Vegas",
     "rings": [
       {
         "name": "South Route",

@@ -85,6 +85,23 @@ self.addEventListener("message", (event) => {
   }
 });
 
+self.addEventListener("install", (event) => {
+  console.warn("INSTALLING SERVICE WORKER");
+  self.clients
+    .matchAll({
+      includeUncontrolled: true,
+      type: "window",
+    })
+    .then((clients) => {
+      if (clients && clients.length) {
+        // Send a response - the clients
+        // array is ordered by last focused
+        clients[0].postMessage({
+          type: "INSTALLING",
+        });
+      }
+    });
+});
 // Any other custom service worker logic can go here.
 // Any other custom service worker logic can go here.
 // Any other custom service worker logic can go here.

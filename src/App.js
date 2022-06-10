@@ -13,6 +13,7 @@ import UpdateToast from "./components/UpdateToast";
 import { StoreContext } from "./components/StoreContext";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import axios from "axios";
+import DownloadingToast from "./components/DownloadingToast";
 
 function App(props) {
   const [currentPage, setCurrentPage] = useState();
@@ -58,7 +59,7 @@ function App(props) {
   }, []);
 
   useEffect(() => {
-    console.warn("!!!!!!!!!!!!!!!USE EFFECT LOAD PAGE APP JS [loadpage]");
+    console.warn("!!!!!!!!!!!!!!!USE EFFECT LOAD PAGE APP JS [loadpage0]");
     loadPage("home");
   }, [loadPage]);
 
@@ -68,13 +69,17 @@ function App(props) {
         {currentPage}
       </div>
       <Nav onClick={loadPage} />
-      <CacheToast />
+      <CacheToast
+        action={() => {
+          props.closeCacheToastHandler();
+        }}
+      />
       <UpdateToast
         action={() => {
           props.skipWaitingHandler();
         }}
       />
-      app2
+      <DownloadingToast />
     </div>
   );
 }

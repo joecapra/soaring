@@ -81,6 +81,13 @@ function registerValidSW(swUrl, config) {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
+        } else {
+          console.warn("######################################");
+          console.warn("#############INSTALLING##################");
+          console.warn("######################################");
+          if (config && config.onInstall) {
+            config.onInstall();
+          }
         }
         installingWorker.onstatechange = () => {
           if (installingWorker.state === "installed") {

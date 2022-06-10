@@ -1,9 +1,13 @@
 @import '../../styles/main.scss';
 
-.rangerings {
+.rangeringsnav {
     @include content-section;
-    
-    &__link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__btn{
         @include btn;
     }
 }

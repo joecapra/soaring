@@ -7,8 +7,8 @@ export default function Speeds() {
   return (
     <div className="speeds">
       <div className="speeds__table-container">
+        <div className="speeds__header">NO WIND</div>
         <table className="speeds__table">
-          <caption>NO WIND</caption>
           <tbody>
             <tr>
               <td>MacCready</td>
@@ -64,8 +64,8 @@ export default function Speeds() {
         </table>
       </div>
       <div className="speeds__table-container">
+        <div className="speeds__header">10 KNOT HEADWIND</div>
         <table className="speeds__table">
-          <caption>10 KNOT HEADWIND</caption>
           <tbody>
             <tr>
               <td>MacCready</td>
@@ -121,8 +121,8 @@ export default function Speeds() {
         </table>
       </div>
       <div className="speeds__table-container">
+        <div className="speeds__header">10 KNOT TAILWIND</div>
         <table className="speeds__table">
-          <caption>10 KNOT TAILWIND</caption>
           <tbody>
             <tr>
               <td>MacCready</td>

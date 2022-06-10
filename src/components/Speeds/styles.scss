@@ -5,74 +5,96 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 0;
+    padding-bottom: 20px;
 
     &__table {
         margin: 0 auto;
         width: 90%;
         border-collapse: collapse;
         border: 2px solid black;
+        margin-bottom: 20px;
     }
     
-    caption {
-        color: white
+    &__header {
+        width: 100%;
+        background-color: #292929;
+        color: $color-highlight;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
+    
+    $color-rows: #838383; // First Column
+    
     th, td {
         text-align: center;
         padding: 5px;
+        background-color: $color-rows;
     }
 
-    $color-col1: #afd0a1; // First Column
-    $color-col2: #ffdf96; // Second Column
-    $color-col3: #9abcef; // Third Column
 
-    tr:nth-child(odd) {
-        background: $color-col1;
-        td:nth-child(1) {
-            background: $color-col1;
-        }
-        td:nth-child(2) {
-            background: $color-col2;
-        }
-        td:nth-child(3) {
-            background: $color-col3;
+    tr:nth-child(1) {
+        td {
+            background: black;
+            color: #eeeeee
         }
     }
-
     tr:nth-child(2) {
-        border-bottom: 1px solid black;
-    }
-    tr:nth-child(5) {
-        border-top: 8px solid black;
+        td {
+            background-color: lighten($color-rows, 12%)
+        }
     }
     tr:nth-child(8) {
-        border-top: 8px solid black;
+        td {
+            background-color: lighten($color-rows, 12%)
+        }
     }
-
+    tr:nth-child(10) {
+        td {
+            background-color: lighten($color-rows, 12%)
+        }
+    }
+    tr:nth-child(4) {
+        td {
+            background: $color-highlight;
+            font-weight: bold;
+        }
+        td:nth-child(2){
+            border-left: 2px solid rgb(0, 0, 0);
+            border-right: 2px solid rgb(0, 0, 0);
+            border-top: 2px solid rgb(0, 0, 0);
+        }
+    }
     tr:nth-child(5) {
-        font-weight: bold;
+        td {
+            background: lighten($color-highlight, 12%);
+            font-weight: bold;
+        }
+        td:nth-child(2){
+            border-left: 2px solid rgb(0, 0, 0);
+            border-right: 2px solid rgb(0, 0, 0);
+        }
+        td:nth-child(2){
+            border-left: 2px solid rgb(0, 0, 0);
+            background: $color-highlight;
+        }
     }
     tr:nth-child(6) {
-        font-weight: bold;
-    }
-    tr:nth-child(7) {
-        font-weight: bold;
+        td {
+            background: $color-highlight;
+            font-weight: bold;
+        }
+        td:nth-child(2){
+            border-left: 2px solid rgb(0, 0, 0);
+            border-right: 2px solid rgb(0, 0, 0);
+            border-bottom: 2px solid rgb(0, 0, 0);
+        }
     }
 
 
-    tr:nth-child(even) {
-        // background: $color-col1;
-        td:nth-child(1) {
-            background: lighten($color-col1, 12%);
-        }
-        td:nth-child(2) {
-            background: lighten($color-col2, 12%);
-        }
-        td:nth-child(3) {
-            background: lighten($color-col3, 12%);
-        }
-    }
+  
 
 
 }

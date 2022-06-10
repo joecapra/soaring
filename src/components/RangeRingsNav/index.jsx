@@ -15,7 +15,7 @@ export default function RangeRingsNav(props) {
   }, []);
 
   return (
-    <div className="rangerings">
+    <div className="rangeringsnav">
       {route.map((item) => {
         return (
           <div
@@ -23,7 +23,7 @@ export default function RangeRingsNav(props) {
             onClick={() => {
               props.onClick("rings", item);
             }}
-            className="rangerings__btn"
+            className="rangeringsnav__btn"
           >
             {item.name}
           </div>

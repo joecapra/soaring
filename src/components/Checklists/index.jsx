@@ -37,7 +37,7 @@ export default function Checklists(props) {
         );
       })}
       <div className="checklists__resetbtn" onClick={clearAllChecklists}>
-        CLEAR ALL CHECKLISTS
+        CLEAR ALL
       </div>
     </div>
   );

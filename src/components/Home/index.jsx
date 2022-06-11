@@ -33,7 +33,7 @@ export default function Home(props) {
 		c12.1-0.5,24.2-0.6,36.3-0.6c7,0,13.9,0,20.9,0C128,33,128.2,33,128.5,33z"
         />
       </svg>
-      <div className="home__appversion">{process.env.REACT_APP_VERSION}</div>
+      <div className="home__appversion">v{process.env.REACT_APP_VERSION}</div>
     </div>
   );
 }

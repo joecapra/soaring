@@ -83,7 +83,6 @@ export default function List(props) {
                 }`}
               />
               {item.task}
-              {item.id}
             </div>
           </div>
         );

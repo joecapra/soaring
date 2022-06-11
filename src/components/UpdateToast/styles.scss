@@ -1,24 +1,10 @@
 @import '../../styles/main.scss';
 
 .updatetoast {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 40px;
-    background-color: #ff007f;
-    width: 100%;
-    transform: translateX(-50%);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    @include toast;
 
     &__btn{
-        background-color: white;
-        border-radius: 5px;
-        padding: 3px 5px;
-        font-size: .9rem;
-        cursor: pointer;
+        @include toast-btn;
     }
 
     &--visible {

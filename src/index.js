@@ -7,10 +7,11 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let waitingRegistration = null;
 
-const debug = true;
+const debug = false;
+const appVersion = "1.0.3";
 
 const handleSkipWaiting = () => {
-  console.warn("DO CUSTOM SKIP WAITING");
+  console.warn("DO CUSTOM SKIP WAITING----");
   if (waitingRegistration) {
     waitingRegistration.waiting.postMessage({
       type: "SKIP_WAITING",
@@ -33,6 +34,7 @@ root.render(
     <App
       skipWaitingHandler={handleSkipWaiting}
       closeCacheToastHandler={handleCacheComplete}
+      appVersion={appVersion}
     />
   </StoreProvider>
   // </React.StrictMode>
@@ -54,7 +56,10 @@ if (debug === true) {
       waitingRegistration = registration;
       const el = document.getElementById("updatetoast");
       el.classList.add("updatetoast--visible");
-      console.warn("!!!!!!!!!!!!!!!ON UPDATE 35");
+      console.warn("!!!!!!!!!!!!!!!ON UPDATE 35 OKM");
+
+      const element = document.getElementById("downloadingtoast");
+      element.classList.remove("downloadingtoast--visible");
       // setShowUpdateToast({ waitingRegistration: registration, show: true });
     },
     onInstall: (registration) => {
@@ -80,4 +85,4 @@ if (debug === true) {
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// llllll or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

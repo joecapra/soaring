@@ -22,7 +22,7 @@ function App(props) {
   const loadPage = useCallback((page, payload) => {
     switch (page) {
       case "home":
-        setCurrentPage(<Home />);
+        setCurrentPage(<Home appVersion={props.appVersion} />);
         break;
       case "rings":
         setCurrentPage(<RangeRings onClick={loadPage} payload={payload} />);

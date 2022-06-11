@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.scss";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className="home">
       <svg
@@ -33,6 +33,7 @@ export default function Home() {
 		c12.1-0.5,24.2-0.6,36.3-0.6c7,0,13.9,0,20.9,0C128,33,128.2,33,128.5,33z"
         />
       </svg>
+      <div className="home__appversion">v{props.appVersion}</div>
     </div>
   );
 }

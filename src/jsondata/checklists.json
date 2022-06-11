@@ -1,29 +1,224 @@
 [
   {
-    "name": "Check1",
+    "name": "Day Before",
     "items": [
       {
-        "task": "check this "
+        "task": "Charge ship batteries "
       },
       {
-        "task": "check that"
+        "task": "Charge flight computers (main and backup)"
       },
       {
-        "task": "check that"
+        "task": "Charge inReach"
+      },
+      {
+        "task": "Charge radio battery"
+      },
+      {
+        "task": "Charge Anker powerbank"
+      },
+      {
+        "task": "Full tank of gas"
+      },
+      {
+        "task": "Confirm crew person contact is in InReach"
       }
     ]
   },
   {
-    "name": "Check2",
+    "name": "Morning of - bring",
     "items": [
       {
-        "task": "check this "
+        "task": "Filled CamelBak "
       },
       {
-        "task": "check that"
+        "task": "Food bars"
       },
       {
-        "task": "check that"
+        "task": "Radio and antenna"
+      },
+      {
+        "task": "Ship batteries"
+      },
+      {
+        "task": "Parachute"
+      },
+      {
+        "task": "Flight bag"
+      },
+      {
+        "task": "Both flight computers"
+      },
+      {
+        "task": "EDS"
+      },
+      {
+        "task": "SD card for S100"
+      },
+      {
+        "task": "Hat and face shield"
+      }
+    ]
+  },
+  {
+    "name": "Trailer - Outside",
+    "items": [
+      {
+        "task": "Tires good"
+      },
+      {
+        "task": "Chocks removed"
+      },
+      {
+        "task": "Stab feet up"
+      },
+      {
+        "task": "Check Lights"
+      },
+      {
+        "task": "Hitch clean & greased"
+      },
+      {
+        "task": "Wires around hitch secure"
+      },
+      {
+        "task": "Front hatch locked"
+      },
+      {
+        "task": "Hitch wheel fully up and secured"
+      }
+    ]
+  },
+  {
+    "name": "Trailer - Inside empty",
+    "items": [
+      {
+        "task": "Spare secured"
+      },
+      {
+        "task": "Jack bag"
+      },
+      {
+        "task": "Lug wrench"
+      },
+      {
+        "task": "Tire repair kit"
+      },
+      {
+        "task": "Wing dollies secured"
+      },
+      {
+        "task": "Blue bins secured"
+      },
+      {
+        "task": "Stuff in front hatch secured. "
+      }
+    ]
+  },
+  {
+    "name": "Trailer - Inside with glider",
+    "items": [
+      {
+        "task": "Airbrakes locked"
+      },
+      {
+        "task": "Tail tied down"
+      },
+      {
+        "task": "Horizontal stab rope tied"
+      },
+      {
+        "task": "Tailwheel ramp secured"
+      },
+      {
+        "task": "Blue bins secured"
+      }
+    ]
+  },
+  {
+    "name": "Crew vehicle",
+    "items": [
+      {
+        "task": "Full tank of gas"
+      },
+      {
+        "task": "Keys for trailer"
+      },
+      {
+        "task": "Credit card or money"
+      },
+      {
+        "task": "Radio kit setup"
+      },
+      {
+        "task": "Antenna installed"
+      },
+      {
+        "task": "Cable to charge phone"
+      },
+      {
+        "task": "2x4s for spar box"
+      },
+      {
+        "task": "Bolt cutters"
+      },
+      {
+        "task": "Tool kit"
+      }
+    ]
+  },
+  {
+    "name": "Glider",
+    "items": [
+      {
+        "task": "EDS"
+      },
+      {
+        "task": "Oxygen tank level"
+      },
+      {
+        "task": "SD card in S100"
+      },
+      {
+        "task": "SmakPak on parachute"
+      },
+      {
+        "task": "Camelbak"
+      },
+      {
+        "task": "Landout kits & secured"
+      },
+      {
+        "task": "Tiedown kits & secured"
+      },
+      {
+        "task": "Water bottle & food in landout kit"
+      },
+      {
+        "task": "Puffy jacket accessible"
+      },
+      {
+        "task": "Grab bag in side pocket"
+      },
+      {
+        "task": "Food bars in side pocket"
+      }
+    ]
+  },
+  {
+    "name": "Before flight",
+    "items": [
+      {
+        "task": "iPhone in airplane mode"
+      },
+      {
+        "task": "Oxygen tank ON"
+      },
+      {
+        "task": "Test EDS"
+      },
+      {
+        "task": "Doublecheck everything is onboard"
       }
     ]
   }

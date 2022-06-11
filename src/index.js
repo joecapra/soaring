@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 let waitingRegistration = null;
 
 const debug = false;
-const appVersion = "1.0.3";
+const appVersion = "1.0.4";
 
 const handleSkipWaiting = () => {
   console.warn("DO CUSTOM SKIP WAITING----");

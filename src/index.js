@@ -7,7 +7,8 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let waitingRegistration = null;
 
-const debug = false;
+const debug = true;
+// const debug = false;
 const appVersion = "1.0.5";
 
 const handleSkipWaiting = () => {

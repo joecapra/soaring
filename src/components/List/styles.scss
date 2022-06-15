@@ -79,6 +79,7 @@
         border-right: 1px solid gray;
         background-color: transparent;
         margin-right: 10px;
+        flex-shrink: 0;
 
         &--checked {
             background-color: $color-highlight

@@ -10,6 +10,7 @@ import List from "./components/List";
 import Speeds from "./components/Speeds";
 import CacheToast from "./components/CacheToast";
 import UpdateToast from "./components/UpdateToast";
+import Info from "./components/Info";
 import { StoreContext } from "./components/StoreContext";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import axios from "axios";
@@ -41,6 +42,9 @@ function App(props) {
         break;
       case "speeds":
         setCurrentPage(<Speeds />);
+        break;
+      case "info":
+        setCurrentPage(<Info />);
         break;
       default:
         setCurrentPage("home");
